@@ -1,12 +1,12 @@
 {
-  "name": "plant-catalog",      // Just your project name
-  "version": "1.0.0",          // Initial version
-  "type": "module",            // Enables ES modules (import/export) in Node.js
+  "name": "plant-catalog",     
+  "version": "1.0.0",         
+  "type": "module",          
   "dependencies": {
-    "express": "^4.18.2",      // Web server
-    "node-fetch": "^3.3.2"     // fetch() support in Node.js
+    "express": "^4.18.2",      
+    "node-fetch": "^3.3.2"     
   },
   "scripts": {
-    "start": "node server/server.js"  // Start your server with npm start
+    "start": "node server/server.js"
   }
 }
