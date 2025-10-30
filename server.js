@@ -1,18 +1,15 @@
-import cors from "cors";
-app.use(cors());
-
-import express from "express";
+// /api/sendBlynk.js
 import fetch from "node-fetch";
 
-const app = express();
-const PORT = 3000;
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).send("Method Not Allowed");
+  }
 
-app.use(express.json());
-
-const BLYNK_AUTH_TOKEN = "QhaE1GqAW43iph5gu06laqEN7EcyEpFv";
-
-app.post("/sendBlynk", async (req, res) => {
+  const BLYNK_AUTH_TOKEN = "QhaE1GqAW43iph5gu06laqEN7EcyEpFv";
   const data = req.body;
+
+  // Parse input just like your old Express code
   const parameters = {
     3: Number(data.nd.split("–")[0].split('°')[0]).trim(),
     4: Number(data.nd.split("–")[1].split('°')[0]).trim(),
@@ -30,13 +27,14 @@ app.post("/sendBlynk", async (req, res) => {
       const resp = await fetch(url);
       const text = await resp.text();
       if (text.trim() !== "OK") allSuccess = false;
-    } catch (err) {
+    } catch {
       allSuccess = false;
     }
   }
 
-  if (allSuccess) res.json({ message: `🌿 Tất cả thông số của "${data.name}" đã gửi thành công!` });
-  else res.json({ message: `⚠️ Một số thông số chưa gửi được.` });
-});
-
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+  res.status(200).json({
+    message: allSuccess
+      ? `🌿 Tất cả thông số của "${data.name}" đã gửi thành công!`
+      : `⚠️ Một số thông số chưa gửi được.`,
+  });
+}
