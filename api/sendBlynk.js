@@ -1,4 +1,5 @@
 //import fetch from "node-fetch";
+console.log("Received:", req.body);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
