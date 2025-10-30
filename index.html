@@ -264,7 +264,6 @@ function loadPlantList(list) {
     select.selectedIndex = 0;
     showPlant(select.value); // show the first plant info
   } else {
-    select.selectedIndex = 0; // blank will be selected if list empty
     const opt = document.createElement("option");
     opt.value = "";
     opt.textContent = "Không tìm thấy cây...";
