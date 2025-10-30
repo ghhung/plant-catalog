@@ -1,12 +1,8 @@
 {
-  "name": "plant-catalog",     
-  "version": "1.0.0",         
-  "type": "module",          
+  "name": "blynk-vercel-api",
+  "version": "1.0.0",
+  "type": "module",
   "dependencies": {
-    "express": "^4.18.2",      
-    "node-fetch": "^3.3.2"     
-  },
-  "scripts": {
-    "start": "node server.js"
+    "node-fetch": "^3.3.2"
   }
 }
