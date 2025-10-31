@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "api/sendBlynk.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/sendBlynk", "dest": "/api/sendBlynk.js" }
-  ]
-}
