@@ -264,11 +264,6 @@ function loadPlantList(list) {
     select.appendChild(opt);
   });
 
-  // 🟣 Always add blank option at the bottom
-  const blankOpt = document.createElement("option");
-  blankOpt.value = "";
-  blankOpt.textContent = ""; // visually blank
-  select.appendChild(blankOpt);
 
   // 🟢 Highlight the first real plant (not blank)
   select.selectedIndex = 0;
